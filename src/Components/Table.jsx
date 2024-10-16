@@ -7,7 +7,7 @@ const Table = ({list,total}) => {
      <table width='100%' className='mt-5 mb-5'>
    <thead>
          <tr className=' bg-gray-400 p-1'>
-          <td>Itaim-name</td>
+          <td>Item-name</td>
           <td>Quantity</td>
           <td>Price</td>
           <td className="amount">Amount</td>
