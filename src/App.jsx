@@ -23,6 +23,7 @@ function App() {
      const[invoicedate ,setInvoicedate]=useState('')
      const[duedate ,setDuedate]=useState('')
      const[item,setItem]=useState('')
+     const[hsnnm,setHsnnm]=useState('')
      const[quantity,setQuantity]=useState('')
      const[price,setPrice]=useState('')
      const[amount,setAmount]=useState('')
@@ -71,7 +72,7 @@ function App() {
                amount={amount}
                list={list}
                total={total}
-               
+               hsnnm={hsnnm}
                
                />
               <Note/>
@@ -96,6 +97,7 @@ function App() {
         onChange={(e)=>setName(e.target.value)}
         placeholder='Enter the your name' 
         autoComplete='off'/>
+        
 
 <label htmlFor="address">Enter customer address</label>
         <input type='text'
@@ -112,7 +114,7 @@ function App() {
         onChange={(e)=>setInvoicenumber(e.target.value)}
         placeholder='Enter the Invoice Number' 
         autoComplete='off'/>
-
+ 
 <label htmlFor="name">Enter the Date</label>
         <input type='Date'
         id='text' 
@@ -128,7 +130,8 @@ function App() {
         onChange={(e)=>setDuedate(e.target.value)}
         placeholder='Enter the Due Date' 
         autoComplete='off'/>
-
+        
+        
 
         {/* table */}
         <article>
@@ -138,6 +141,7 @@ function App() {
           setAmount={setAmount} amount={amount}
           setList={setList} list={list}
           setTotal={setTotal} total={total}
+          setHsnnm={setHsnnm} hsnnm={hsnnm}
           
           />
         </article>

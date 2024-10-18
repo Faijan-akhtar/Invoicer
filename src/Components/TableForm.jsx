@@ -14,6 +14,8 @@ const TableForm =
     ,setList
     ,setTotal
     ,total
+    ,setHsnnm
+    ,hsnnm
 
 }) => 
     {
@@ -29,11 +31,13 @@ const TableForm =
           item,
           quantity,
           price,
-          amount }
+          amount ,
+           hsnnm}
           setItem("")
           setPrice("")
           setQuantity("")
           setAmount("")
+          setHsnnm("")
         setList([...list,newItems])
 
       } 
@@ -86,6 +90,16 @@ useEffect(()=>{
       <input type="text" name='item' id='item'
        placeholder='Enter the Item Name' value={item} 
        onChange={(e)=>setItem(e.target.value)}/>
+      
+
+      <label htmlFor='item-name'>HSN-No</label>
+      <input type="number" name='nsn' id='hsn'
+       placeholder='Enter the HSN-Number' value={hsnnm} 
+       onChange={(e)=>setHsnnm(e.target.value)}/>
+      
+
+
+        
 
 <label htmlFor='item-name'>Quantity</label>
       <input type='Number' name='quantity' id='quantity'
@@ -126,17 +140,20 @@ useEffect(()=>{
    <thead>
          <tr className=' bg-gray-400 p-1'>
           <td>Item-name</td>
+          <td>Hsn-No</td>
           <td>Quantity</td>
           <td>Price</td>
           <td className=''>Amount</td>
          </tr>
         </thead>
-     {list.map(({id,amount,price,quantity,item})=>{
+     {list.map(({id,amount,price,quantity,item,hsnnm})=>{
 
         return <React.Fragment key={id}>
           <tbody>
             <tr>
               <td>{item}</td>
+              <td>{hsnnm}</td>
+
               <td>{quantity}</td>
               <td>{price}</td>
               <td className='amount'>{amount}</td>

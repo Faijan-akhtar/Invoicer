@@ -8,17 +8,20 @@ const Table = ({list,total}) => {
    <thead>
          <tr className=' bg-gray-400 p-1'>
           <td>Item-name</td>
+          <td>Hsn-No</td>
           <td>Quantity</td>
           <td>Price</td>
           <td className="amount">Amount</td>
          </tr>
         </thead>
-        {list.map(({id,amount,price,quantity,item})=>{
+        {list.map(({id,amount,price,quantity,item,hsnnm})=>{
 
           return <React.Fragment key={id}>
   <tbody>
     <tr>
       <td>{item}</td>
+      <td>{hsnnm}</td>
+      
       <td>{quantity}</td>
       <td>{price}</td>
       <td>{amount}</td>
